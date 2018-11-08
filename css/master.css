@@ -4,7 +4,7 @@
   stroke-dasharray: 5000 5000;
   stroke-dashoffset: 0;
   animation-name: troll_crawl;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-play-state: running;
