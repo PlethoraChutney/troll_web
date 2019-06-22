@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Eczar');
 
+body {
+  margin: 0;
+  background: #F8E473;
+}
+
 .troll{
   stroke-dasharray: 5000 5000;
   stroke-dashoffset: 0;
@@ -26,43 +31,37 @@ a {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr minmax(240px, 1fr) minmax(350px, 1fr) 1fr;
-  grid-template-rows: 20vh 35vh 35vh 5vh 5vh;
-  grid-template-areas:
-    "lshd lhd rhd rshd"
-    "left-side left1 right1 right-side"
-    "left-side left2 right2 right-side"
-    ". . . ."
-    ". foot foot .";
+  grid-template-columns: [ledge] 1fr [left] minmax(240px, 1fr) [divide] minmax(350px, 1fr) [right] 1fr [redge];
+  grid-template-rows: [top] 15vh [title] 25vh [csparc] 25vh [git] 25vh [traces] 5vh [tamed] 5vh [bottom];
 }
 
 .head {
   border-bottom: 3px solid #000;
-  line-height: 20vh;
+  line-height: 15vh;
+  grid-row: top / title;
 }
 
 .body {
-  line-height: 35vh;
+  line-height: 25vh;
 }
 .right {
   font-family: Eczar, serif;
   font-size: 10vh;
   text-align: left;
-  padding-left: 5vw;
+  grid-column: divide / right;
 }
 
 .left{
   align-items: center;
   vertical-align: middle;
+  grid-column: left / divide;
 }
 
 .right.head {
-  grid-area: rhd;
   margin-top: 2vh;
 }
 
 .left.head{
-  grid-area: lhd;
   stroke: #000;
   fill: none;
   stroke-width:10;
@@ -76,39 +75,26 @@ a {
 
 }
 
-.one.left {
-  grid-area: left1;
+.one {
+  grid-row: title / csparc;
 }
 
-.one.right {
-  grid-area: right1;
+.two {
+  grid-row: csparc / git;
 }
 
-.rowOne {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 2;
-  grid-row-end: 3;
+.three {
+  grid-row: git / traces;
 }
 
-.two.left {
-  grid-area: left2;
-}
-
-.two.right {
-  grid-area: right2;
-}
-
-.rowTwo {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 3;
-  grid-row-end: 4;
+.full {
+  grid-column: ledge / redge;
 }
 
 .footer {
-  grid-area: foot;
   text-align: center;
   font-family: Eczar, serif;
   font-size: 1.5vh;
+  grid-row: traces / tamed;
+  grid-column: ledge / redge;
 }
