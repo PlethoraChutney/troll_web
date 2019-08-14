@@ -95,6 +95,6 @@ a {
   text-align: center;
   font-family: Eczar, serif;
   font-size: 1.5vh;
-  grid-row: traces / tamed;
+  grid-row: tamed / bottom;
   grid-column: ledge / redge;
 }
