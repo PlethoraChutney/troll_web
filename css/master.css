@@ -3,6 +3,9 @@
 body {
   margin: 0;
   background: #F8E473;
+  font-family: Eczar, serif;
+  font-size: 10vh;
+  text-align: left;
 }
 
 .troll{
@@ -31,37 +34,60 @@ a {
 
 .wrapper {
   display: grid;
-  grid-template-columns: [ledge] 1fr [left] minmax(240px, 1fr) [divide] minmax(350px, 1fr) [right] 1fr [redge];
-  grid-template-rows: [top] 15vh [title] 25vh [csparc] 25vh [git] 25vh [traces] 5vh [tamed] 5vh [bottom];
+  grid-template-columns: [ledge] 1fr [left] 1fr [ldivide] 1fr [rdivide] 1fr [redge];
+  grid-template-rows: [top] 20vh [title] 33vh [upper] 33vh [lower] 2vh [tamed] 7vh [bottom];
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
 }
 
 .head {
   border-bottom: 3px solid #000;
   line-height: 15vh;
   grid-row: top / title;
+  text-align: center;
 }
 
 .body {
   line-height: 25vh;
 }
-.right {
-  font-family: Eczar, serif;
-  font-size: 10vh;
-  text-align: left;
-  grid-column: divide / right;
+
+.full {
+  grid-column: 1 / 5;
 }
 
-.left{
+.fulll {
+  vertical-align: middle;
+  grid-column: 1 / 3;
+}
+
+.fullr {
   align-items: center;
   vertical-align: middle;
-  grid-column: left / divide;
+  grid-column: 3 / 5;
 }
 
-.right.head {
+.left1 {
+  grid-column-start: 1;
+}
+
+.left2 {
+  grid-column-start: 2;
+}
+
+.right1 {
+  grid-column: ldivide;
+}
+
+.right2 {
+  grid-column: rdivide;
+}
+
+
+.fullr.head {
   margin-top: 2vh;
 }
 
-.left.head{
+.fulll.head{
   stroke: #000;
   fill: none;
   stroke-width:10;
@@ -76,19 +102,15 @@ a {
 }
 
 .one {
-  grid-row: title / csparc;
+  grid-row: title / upper;
 }
 
 .two {
-  grid-row: csparc / git;
+  grid-row: upper / lower;
 }
 
-.three {
-  grid-row: git / traces;
-}
-
-.full {
-  grid-column: ledge / redge;
+.centering {
+  align-self: center;
 }
 
 .footer {
@@ -96,5 +118,4 @@ a {
   font-family: Eczar, serif;
   font-size: 1.5vh;
   grid-row: tamed / bottom;
-  grid-column: ledge / redge;
 }
