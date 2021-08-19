@@ -37,7 +37,7 @@ a {
   grid-template-columns: [ledge] 1fr [left] 1fr [ldivide] 1fr [rdivide] 1fr [redge];
   grid-template-rows: [top] 20vh [title] 33vh [upper] 33vh [lower] 2vh [tamed] 7vh [bottom];
   grid-column-gap: 10px;
-  grid-row-gap: 15px;
+  grid-row-gap: 0px;
 }
 
 .head {
@@ -118,4 +118,5 @@ a {
   font-family: Eczar, serif;
   font-size: 1.5vh;
   grid-row: tamed / bottom;
+  line-height: 100%;
 }
